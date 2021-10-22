@@ -1,6 +1,6 @@
 # U.S. COVID Vaccination Map
 
-#### As of 10/13/2021
+#### Data as of 10/13/2021
 
 ---
 
