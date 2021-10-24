@@ -99,7 +99,7 @@ info.update = function (props) {
       props.vaxData_Date +
       "</h6>" +
       "<h6>" +
-      "The CDC's definition of fully vaccinated: Someone who has recieved the second dose of a two-dose vaccine or one dose a of singledose vaccine" +
+      "The CDC's definition of fully vaccinated: Someone who has recieved the second dose of a two-dose vaccine or one dose a of single-dose vaccine" +
       "</h6>"
     : "Hover over a county";
 };
