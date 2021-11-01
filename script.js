@@ -46,13 +46,13 @@ function onEachFeature(feature, layer) {
 }
 
 function getColor(d) {
-  return d > 75
+  return d >= 75
     ? "#2c7bb6"
-    : d > 50
+    : d >= 50
     ? "#abd9e9"
-    : d > 25
+    : d >= 25
     ? "#fdae61"
-    : d >= 0
+    : d > 0
     ? "#d7191c"
     : "#5f5f5f";
 }
@@ -121,10 +121,11 @@ function highlightFeature(e) {
 //reset the hightlighted feature when the mouse is out of its region
 function resetHighlight(e) {
   geojson.resetStyle(e.target);
-  info.update(); 
+  info.update(); // this line will be called later
 }
 
 // 4. create the legend
+// note that line breaks have been added and may need to be removed
 var legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function (map) {
@@ -136,16 +137,14 @@ legend.onAdd = function (map) {
 
   // loop through our density intervals and generate a label with a colored square for each interval
 
- for (var i = 0; i < grades.length; i++) {
-  var lowValue = (grades[i] > 1) ? (grades[i] + 1) : grades[i];
-  var highValue = grades[i + 1];
-  div.innerHTML +=
-    '<i style="background:' +
-    getColor(grades[i] + 1) +
-    '"></i> ' +
-    lowValue +
-    (highValue ? "&ndash;" + highValue + "<br>" : "+");
-}
+  for (var i = 0; i < grades.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' +
+      getColor(grades[i] + 1) +
+      '"></i> ' +
+      grades[i] +
+      (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+  }
 
   return div;
 };
