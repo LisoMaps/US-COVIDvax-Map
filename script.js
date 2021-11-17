@@ -26,7 +26,7 @@ var geojson = L.geoJson.ajax("data/counties.geojson", {
   style: style,
   onEachFeature: onEachFeature,
   attribution:
-    'Data: <a href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh/data">CDC</a> | Map: Chip Weir',
+    'Data: <a href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh/data">CDC</a> | Map: <a href="https://weircf.wixsite.com/e-portfolio">Chip Weir</a>',
 });
 
 geojson.addTo(map);
